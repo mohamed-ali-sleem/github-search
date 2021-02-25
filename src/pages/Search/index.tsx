@@ -55,6 +55,7 @@ const SearchComponent: React.FC<any> = ({ fetchRequest, searhResult, errors, isL
     }
   };
 
+  // load more data
   const loadeMore = () => {
     let size = (per_page + 10);
     fetchRequest(form.type, form.name, page, size)
