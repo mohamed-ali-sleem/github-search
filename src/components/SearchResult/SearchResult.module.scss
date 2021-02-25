@@ -1,0 +1,17 @@
+.CardsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  grid-gap: 20px;
+  margin-bottom: 20px;
+}
+
+.Error__messge {
+  color: rgb(185, 0, 0);
+  font-size: 28px;
+  text-transform: capitalize;
+  margin-top: 20px;
+}
+

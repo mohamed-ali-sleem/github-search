@@ -1,0 +1,111 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body{
+    height: 100%;
+    width: 100%;
+}
+
+.px-s { padding: .25rem; }
+.p-sm { padding: .5rem; }
+.p-md { padding: 1rem; }
+.p-lg { padding: 1.5rem; }
+.px-l { padding: 3rem; }
+
+.px-xs { padding: .25rem 0; }
+.px-sm { padding: .5rem 0; }
+.px-md { padding: 1rem 0; }
+.px-lg { padding: 1.5rem 0; }
+.px-xl { padding: 3rem 0; }
+
+.py-xs { padding: 0 .25rem; }
+.py-sm { padding: 0 .5rem; }
+.py-md { padding: 0 1rem; }
+.py-lg { padding: 0 1.5rem; }
+.py-xl { padding: 0 3rem; }
+
+.pt-xs { padding-top: .25rem; }
+.pt-sm { padding-top: .5rem; }
+.pt-md { padding-top: 1rem; }
+.pt-lg { padding-top: 1.5rem; }
+.pt-xl { padding-top: 3rem; }
+
+.pr-xs { padding-right: .25rem; }
+.pr-sm { padding-right: .5rem; }
+.pr-md { padding-right: 1rem; }
+.pr-lg { padding-right: 1.5rem; }
+.pr-xl { padding-right: 3rem; }
+
+.pb-xs { padding-bottom: .25rem; }
+.pb-sm { padding-bottom: .5rem; }
+.pb-md { padding-bottom: 1rem; }
+.pb-lg { padding-bottom: 1.5rem; }
+.pb-xl { padding-bottom: 3rem; }
+
+.pl-xs { padding-left: .25rem; }
+.pl-sm { padding-left: .5rem; }
+.pl-md { padding-left: 1rem; }
+.pl-lg { padding-left: 1.5rem; }
+.pl-xl { padding-left: 3rem; }
+
+.mx-s { margin: .25rem; }
+.margin-sm { margin: .5rem; }
+.margin-md { margin: 1rem; }
+.margin-lg { margin: 1.5rem; }
+.mx-l { margin: 3rem; }
+
+.mx--xs { margin: .25rem 0; }
+.mx--sm { margin: .5rem 0; }
+.mx--md { margin: 1rem 0; }
+.mx--lg { margin: 1.5rem 0; }
+.mx--xl { margin: 3rem 0; }
+
+.my--xs { margin: 0 .25rem; }
+.my--sm { margin: 0 .5rem; }
+.my--md { margin: 0 1rem; }
+.my--lg { margin: 0 1.5rem; }
+.my--xl { margin: 0 3rem; }
+
+.mt-xs { margin-top: .25rem; }
+.mt-sm { margin-top: .5rem; }
+.mt-md { margin-top: 1rem; }
+.mt-lg { margin-top: 1.5rem; }
+.mt-xl { margin-top: 3rem; }
+
+.mr-xs { margin-right: .25rem; }
+.mr-sm { margin-right: .5rem; }
+.mr-md { margin-right: 1rem; }
+.mr-lg { margin-right: 1.5rem; }
+.mr-xl { margin-right: 3rem; }
+
+.mb-xs { margin-bottom: .25rem; }
+.mb-sm { margin-bottom: .5rem; }
+.mb-md { margin-bottom: 1rem; }
+.mb-lg { margin-bottom: 1.5rem; }
+.mb-xl { margin-bottom: 3rem; }
+
+.ml-xs { margin-left: .25rem; }
+.ml-sm { margin-left: .5rem; }
+.ml-md { margin-left: 1rem; }
+.ml-lg { margin-left: 1.5rem; }
+.ml-xl { margin-left: 3rem; }
+
+
+.container {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 1199px) { 
+    .container {
+        width: 100%;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+}
