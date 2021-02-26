@@ -1,6 +1,7 @@
 import React from "react";
 import "./card.scss";
 
+// here we can provide formated data
 interface Props {
   user: any;
 }

@@ -26,6 +26,7 @@ interface propsFromComponent {
 
 
 const SearchComponent: React.FC<any> = ({ fetchRequest, searhResult, errors, isLoading, resetStore, itemsCount }) => {
+  // data binded to search options
   const searchOptions: SearchOption[] = [
     {
       key: 1,
@@ -43,10 +44,10 @@ const SearchComponent: React.FC<any> = ({ fetchRequest, searhResult, errors, isL
   const [form, setForm] = useState<propsFromComponent>({ name: "", type: "users" });
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>): void => {
-    console.log(form);
     setForm({ ...form, [event.target.name]: event.target.value });
   };
 
+  // handle user changes search input
   const handleSearch = () => {
     if (form.name.length >= 3) {
       loadeMore(per_page)
@@ -60,14 +61,15 @@ const SearchComponent: React.FC<any> = ({ fetchRequest, searhResult, errors, isL
     fetchRequest(form.type, form.name, page, size)
   }
 
+  // bounce data after type 3 chars with 1500 ms
   const debouncedSearch = useCallback(debounce(handleSearch, 1500), [form]);
-  const dataScrolled = useCallback(debounce(loadeMore, 500), [searhResult]);
 
   useEffect(() => {
     debouncedSearch();
   }, [form]);
 
 
+  // load data on user reach end of page
   window.onscroll = function () {
     if ((window.pageYOffset + window.innerHeight) >= document.body.scrollHeight) {
       // you're at the bottom of the page
@@ -91,7 +93,7 @@ const SearchComponent: React.FC<any> = ({ fetchRequest, searhResult, errors, isL
             </div>
 
             <form className="search_form">
-              <input className="form__control mr-md" placeholder="Start type to rearch ... " name="name" value={form.name} onChange={handleChange} />
+              <input className="form__control mr-md" placeholder={`Start type to search ${form.type} ...`} name="name" value={form.name} onChange={handleChange} />
               <select className="form__control custom__select" name="type" onChange={handleChange}>
                 {searchOptions.map((opt) => (
                   <option value={opt.name} key={opt.id} >{opt.name}</option>
