@@ -49,15 +49,14 @@ const SearchComponent: React.FC<any> = ({ fetchRequest, searhResult, errors, isL
 
   const handleSearch = () => {
     if (form.name.length >= 3) {
-      loadeMore()
+      loadeMore(per_page)
     } else {
       resetStore()
     }
   };
 
   // load more data
-  const loadeMore = () => {
-    let size = (per_page + 10);
+  const loadeMore = (size:number) => {
     fetchRequest(form.type, form.name, page, size)
   }
 
@@ -72,8 +71,9 @@ const SearchComponent: React.FC<any> = ({ fetchRequest, searhResult, errors, isL
   window.onscroll = function () {
     if ((window.pageYOffset + window.innerHeight) >= document.body.scrollHeight) {
       // you're at the bottom of the page
-      setPerPage(c => c + 10);
-      dataScrolled()
+      let size = (per_page + 10);
+      setPerPage(size);
+      loadeMore(size)
     }
   };
 

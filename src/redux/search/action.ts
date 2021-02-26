@@ -16,7 +16,7 @@ export const fetchRequest: AppThunk = (type:string, query: string, page: number,
       })
       .catch((error) => {
         // error.message is the error message
-        dispatch(fetchSearchsFailure("server error please try again"));
+        dispatch(fetchSearchsFailure("server error please try again after some time"));
       });
   };
 };

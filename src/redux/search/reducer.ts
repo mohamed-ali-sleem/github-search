@@ -3,7 +3,7 @@ import { SearchActionTypes, SearchState } from "./types";
 
 export const initialState: SearchState = {
   data: [],
-  errors: undefined,
+  errors: '',
   loading: false,
   count: 0,
 };

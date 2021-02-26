@@ -23,7 +23,7 @@ const SearchResult: React.FC<Props> = ({ items, loading, error, form, itemsCount
       </div>
     )
   }
-  if (loading && itemsCount <= 0) { return <img src={spinner} width="90px" height="90px" className="icon" alt="loader icon" /> }
+  if (loading && (itemsCount <= 0  || undefined )) { return <img src={spinner} width="90px" height="90px" className="icon" alt="loader icon" /> }
   
   if (!items.length && form.name) {
     return <p> No reposeitories or Users match this keyword</p>
