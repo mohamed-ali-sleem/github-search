@@ -8,7 +8,7 @@ export type AppThunk = ActionCreator<ThunkAction<void, null, null, Action<string
 export const fetchRequest: AppThunk = (type:string, query: string, page: number, count: number ) => {
   return (dispatch: Dispatch) => {
     dispatch(fetchSearchsRequest());
-    axios.get(`${process.env.SEARCH_API_URL}/${type}?q=${query}&page=${page}&per_page=${count}`)
+    axios.get(`${process.env.REACT_APP_API_BASE_URL}/${type}?q=${query}&page=${page}&per_page=${count}`)
       .then((response) => {
         const searchResult: any = response;
         // response.data is the Searchs
