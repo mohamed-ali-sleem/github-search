@@ -10,6 +10,8 @@ import { resetStore } from "../../redux/search/action";
 import { ThunkDispatch } from "redux-thunk";
 import { AnyAction } from "redux";
 import SearchResult from "../../components/SearchResult/SearchResult";
+import { persistStore } from 'redux-persist';
+
 
 import "./style.scss";
 
@@ -55,6 +57,10 @@ const SearchComponent: React.FC<any> = ({ fetchRequest, searhResult, errors, isL
       resetStore()
     }
   };
+
+  if (errors && (form.name.length == 0 )) {
+    resetStore()
+  }
 
   // load more data
   const loadeMore = (size: number) => {
