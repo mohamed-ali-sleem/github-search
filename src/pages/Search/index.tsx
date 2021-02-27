@@ -51,13 +51,13 @@ const SearchComponent: React.FC<any> = ({ fetchRequest, searhResult, errors, isL
   const handleSearch = () => {
     if (form.name.length >= 3) {
       loadeMore(per_page)
-    } else {
+    } else if (form.name.length <= 3 && form.name.length >= 1) {
       resetStore()
     }
   };
 
   // load more data
-  const loadeMore = (size:number) => {
+  const loadeMore = (size: number) => {
     fetchRequest(form.type, form.name, page, size)
   }
 
@@ -80,7 +80,7 @@ const SearchComponent: React.FC<any> = ({ fetchRequest, searhResult, errors, isL
   };
 
   return (
-    <div className={`search__page ${form.name.length >= 3 ? "fixed_header" : ""}`}>
+    <div className={`search__page ${(form.name.length >= 3 || itemsCount > 0) ? "fixed_header" : ""}`}>
       <div className="header__container">
         <div className="container">
           <div className="search__container">

@@ -2,12 +2,22 @@
 
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
+import { Provider } from "react-redux";
+import { ApplicationState } from "./redux";
+import { Store } from "redux";
+import { History } from "history";
+import { PersistGate } from 'redux-persist/integration/react'
 import { createBrowserHistory } from "history";
 import configureStore from "./configureStore";
 import reportWebVitals from './reportWebVitals';
-
+import { Persistor } from "redux-persist";
+import "./index.css";
+import App from "./App";
+interface MainProps {
+  store: Store<ApplicationState>;
+  history: History;
+  persistor: Persistor
+}
 const history = createBrowserHistory();
 
 const initialState: any = {};
@@ -15,8 +25,12 @@ const store = configureStore(history, initialState).store;
 const persistor = configureStore(history, initialState).persistor;
 
 ReactDOM.render(
-  
-  <App store={store} history={history} persistor={persistor} />,
+
+  <Provider store={store}>
+    <PersistGate loading={null} persistor={persistor}>
+      <App />
+    </PersistGate>
+  </Provider>,
   document.getElementById("root")
 );
 
