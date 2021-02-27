@@ -58,6 +58,7 @@ const SearchComponent: React.FC<any> = ({ fetchRequest, searhResult, errors, isL
     }
   };
 
+  // clear cache if  we have error  
   if (errors && (form.name.length == 0 )) {
     resetStore()
   }
