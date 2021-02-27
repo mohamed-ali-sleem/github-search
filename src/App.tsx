@@ -4,9 +4,9 @@ import { Provider } from "react-redux";
 import { ApplicationState } from "./redux";
 import { Store } from "redux";
 import { History } from "history";
-import { ConnectedRouter } from "connected-react-router";
 import { PersistGate } from 'redux-persist/integration/react'
 import Routes from "./routes";
+import { BrowserRouter } from "react-router-dom";
 
 interface MainProps {
   store: Store<ApplicationState>;
@@ -18,9 +18,9 @@ const App: React.FC<MainProps> = ({ store, history, persistor }) => {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <ConnectedRouter history={history}>
+        <BrowserRouter>
           <Routes />
-        </ConnectedRouter>
+        </BrowserRouter>
       </PersistGate>
     </Provider>
   );
